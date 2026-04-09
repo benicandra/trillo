@@ -4,22 +4,25 @@
   "description": "Trillo app",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "watch:sass": "sass sass/main.scss css/style.css --watch",
     "devserver": "live-server",
     "start": "npm-run-all --parallel devserver watch:sass",
-    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
-    "concat:css": "concat -o css/style.concat.css css/styles.css css/style.comp.css",
+    "compile:sass": "sass sass/main.scss css/style.comp.css --no-source-map",
+    "concat:css": "concat -o css/style.concat.css css/style.css css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.concat.css -o css/style.prefix.css",
-    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
-    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
+    "compress:css": "sass css/style.prefix.css css/style.css --no-source-map --style=compressed",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css",
+    "format": "prettier --write \"**/*.{html,css,scss,js,json}\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.19",
     "concat": "^1.0.3",
-    "node-sass": "^9.0.0",
+    "live-server": "^1.2.2",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^11.0.0"
+    "postcss-cli": "^11.0.0",
+    "prettier": "^3.8.1",
+    "sass": "^1.77.0"
   }
 }
