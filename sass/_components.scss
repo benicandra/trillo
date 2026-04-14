@@ -35,7 +35,7 @@
       background-color: var(--color-grey-light-3);
     }
 
-    &::--webkit-input-placeholder {
+    &::-webkit-input-placeholder {
       font-weight: 100;
       color: var(--color-grey-light-4);
     }
@@ -220,9 +220,62 @@
 .gallery {
   display: flex;
 
+  &__link {
+    display: block;
+    width: 100%;
+  }
+
   &__photo {
     width: 100%;
     display: block;
+    transition: transform 0.3s;
+  }
+
+  &__link:hover &__photo {
+    transform: scale(1.02);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 1000;
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 4px;
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.5);
+  }
+
+  &__close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 4rem;
+    color: #fff;
+    text-decoration: none;
+    line-height: 1;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }
 

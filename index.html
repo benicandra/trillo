@@ -96,25 +96,31 @@
         <main class="hotel-view">
           <div class="gallery">
             <figure class="gallery__item">
-              <img
-                src="img/hotel-1.jpg"
-                alt="Photo of hotel 1"
-                class="gallery__photo"
-              />
+              <a href="#lightbox-1" class="gallery__link">
+                <img
+                  src="img/hotel-1.jpg"
+                  alt="Photo of hotel 1"
+                  class="gallery__photo"
+                />
+              </a>
             </figure>
             <figure class="gallery__item">
-              <img
-                src="img/hotel-2.jpg"
-                alt="Photo of hotel 2"
-                class="gallery__photo"
-              />
+              <a href="#lightbox-2" class="gallery__link">
+                <img
+                  src="img/hotel-2.jpg"
+                  alt="Photo of hotel 2"
+                  class="gallery__photo"
+                />
+              </a>
             </figure>
             <figure class="gallery__item">
-              <img
-                src="img/hotel-3.jpg"
-                alt="Photo of hotel 3"
-                class="gallery__photo"
-              />
+              <a href="#lightbox-3" class="gallery__link">
+                <img
+                  src="img/hotel-3.jpg"
+                  alt="Photo of hotel 3"
+                  class="gallery__photo"
+                />
+              </a>
             </figure>
           </div>
 
@@ -255,6 +261,21 @@
           </div>
         </main>
       </div>
+    </div>
+
+    <div class="lightbox" id="lightbox-1">
+      <a href="#" class="lightbox__close">&times;</a>
+      <img src="img/hotel-1.jpg" alt="Photo of hotel 1" class="lightbox__img" />
+    </div>
+
+    <div class="lightbox" id="lightbox-2">
+      <a href="#" class="lightbox__close">&times;</a>
+      <img src="img/hotel-2.jpg" alt="Photo of hotel 2" class="lightbox__img" />
+    </div>
+
+    <div class="lightbox" id="lightbox-3">
+      <a href="#" class="lightbox__close">&times;</a>
+      <img src="img/hotel-3.jpg" alt="Photo of hotel 3" class="lightbox__img" />
     </div>
   </body>
 </html>
