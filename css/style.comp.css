@@ -359,7 +359,7 @@ body {
 }
 @media only screen and (max-width: 37.5em) {
   .overview__rating-count {
-    font-size: 0.5rem;
+    font-size: 1rem;
   }
 }
 
